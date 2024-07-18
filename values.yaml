@@ -1,0 +1,7 @@
+replicas: 1
+storageSize: 1Gi
+
+mongodb:
+  rootPassword: "mysecretpassword"
+  database: mydatabase
+  port: 27017

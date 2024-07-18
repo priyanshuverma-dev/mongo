@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "replicas": {
+      "description": "Number of MongoDB replicas",
+      "type": "integer"
+    },
+    "storageSize": {
+      "description": "Size of MongoDB storage",
+      "type": "string",
+      "enum": ["1Gi", "2Gi", "4Gi"]
+    },
+    "mongodb": {
+      "title": "MongoDB Configuration",
+      "type": "object",
+      "properties": {
+        "rootPassword": {
+          "type": "string",
+          "title": "Root Password"
+        },
+        "database": {
+          "type": "string",
+          "title": "Database Name"
+        },
+        "port": {
+          "type": "integer",
+          "title": "MongoDB Port",
+          "default": 27017
+        }
+      },
+      "order": ["rootPassword", "database", "port"]
+    }
+  },
+  "order": ["replicas", "storageSize", "mongodb"],
+  "title": "MongoDB Values",
+  "type": "object"
+}
